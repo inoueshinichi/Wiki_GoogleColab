@@ -27,3 +27,9 @@ for i in range(12):
   print(i, datetime.datetime.today())
   time.sleep(60*60)
 ```
+
+### 12時間ルールの対策
++ 12時間ルールでリセットされるまでの時間の確認
+```
+$ cat /proc/uptime | awk '{printf("残り時間 : %.2f", 12-$1/60/60)}'
+```
